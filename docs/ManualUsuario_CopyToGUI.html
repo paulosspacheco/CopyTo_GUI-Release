@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>CopyTo &mdash; Manual do Usu&aacute;rio</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <span id="markdown-mermaid" aria-hidden="true" data-config="{&quot;darkModeTheme&quot;:&quot;vscode&quot;,&quot;lightModeTheme&quot;:&quot;vscode&quot;,&quot;maxTextSize&quot;:50000,&quot;clickDrag&quot;:&quot;alt&quot;,&quot;showControls&quot;:&quot;onHoverOrFocus&quot;,&quot;resizable&quot;:true,&quot;maxHeight&quot;:&quot;&quot;}"></span>
+				<h1 id="copyto--manual-do-usuário">CopyTo — Manual do Usuário</h1>
+<p><strong>Versão do programa descrita aqui:</strong> 1.6.0.137 (17/11/2026)</p>
+<hr>
+<h2 id="1-o-que-é-o-copyto">1. O que é o CopyTo</h2>
+<p>O CopyTo guarda uma <strong>cópia de segurança das suas pastas na nuvem</strong> (Google Drive, OneDrive, Dropbox e outros) ou em outro lugar de sua escolha, como um disco do computador ou o celular.</p>
+<p>Você escolhe uma pasta, clica em <strong>SINCRONIZAR</strong>, e o CopyTo envia para a nuvem o que é novo ou mudou.p</p>
+<p>Três ideias para guardar:</p>
+<ul>
+<li><strong>A cópia vai do seu computador para a nuvem.</strong> A sua pasta é sempre a original.</li>
+<li><strong>Nada some de vez.</strong> Arquivos que você alterou ou apagou no computador não são destruídos na nuvem: vão para uma <strong>pasta de backup</strong> no mesmo serviço.</li>
+<li><strong>Você pode simular antes.</strong> O botão <strong>Simular</strong> mostra o que seria feito, sem mexer em nada.</li>
+</ul>
+<hr>
+<h2 id="2-o-que-você-precisa">2. O que você precisa</h2>
+<ul>
+<li>Um computador com o CopyTo GUI instalado.</li>
+<li>Conexão com a internet (menos quando o destino for um disco do próprio computador).</li>
+<li>Uma conta no serviço onde vai guardar as cópias (por exemplo, uma conta Google para o Google Drive).</li>
+</ul>
+<p>O CopyTo usa três programas de apoio: <strong>Bash</strong>, <strong>rclone</strong> e <strong>jq</strong>. O botão <strong>Instalar</strong> (seção 3) cuida deles para você.</p>
+<hr>
+<h2 id="3-primeiro-uso">3. Primeiro uso</h2>
+<p>Ao abrir o programa pela primeira vez, ele mostra a aba <strong>Instalador</strong>. Há dois passos: instalar e conectar um serviço.</p>
+<h3 id="31-instalar-o-copyto">3.1 Instalar o CopyTo</h3>
+<ol>
+<li>Na aba <strong>Instalador</strong>, veja a linha de estado. Se estiver escrito <strong>⚠️ CopyTo NÃO Instalado</strong>, clique em <strong>Instalar</strong>.</li>
+<li>Acompanhe o andamento no <strong>Log de Eventos</strong>, na parte de baixo da janela.</li>
+<li>Quando terminar, a linha de estado passa a mostrar <strong>✅ CopyTo Instalado</strong>, com a data e o usuário.</li>
+</ol>
+<p>Ao lado, o programa mostra se as ferramentas necessárias estão presentes: <strong>✅ Bash | ✅ rclone | ✅ jq</strong>. Um ❌ indica que falta alguma delas. Clique em <strong>Instalar</strong> de novo para corrigir.</p>
+<p>No Windows, o Git Bash é instalado automaticamente, se necessário.</p>
+<p>Se você clicar em <strong>Atualizar</strong> a qualquer momento, o programa confere de novo o estado da instalação.</p>
+<h3 id="32-conectar-um-serviço-provider">3.2 Conectar um serviço (provider)</h3>
+<p>Um <strong>provider</strong> (ou <strong>conexão</strong>) é o lugar onde as cópias ficam guardadas.</p>
+<ol>
+<li>Na aba <strong>Instalador</strong>, abra a lista de conexões.
+<ul>
+<li>Itens com <strong>✅</strong> já estão configurados.</li>
+<li>Os demais estão disponíveis para adicionar.</li>
+</ul>
+</li>
+<li>Escolha o serviço desejado e clique em <strong>Adicionar</strong>.</li>
+<li>Siga o que o programa pedir. Depende do serviço:</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Serviço</th>
+<th>O que acontece</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Google Drive</strong> (<code>gdriver</code>), <strong>OneDrive</strong>, <strong>Dropbox</strong></td>
+<td>O programa avisa que vai abrir o navegador. Confirme, entre na sua conta e autorize o acesso.</td>
+</tr>
+<tr>
+<td><strong>IDrive E2</strong>, <strong>Backblaze B2</strong></td>
+<td>Pedem os dados da conta: endereço (endpoint), região, nome do bucket e as chaves de acesso. Você os encontra no painel do serviço.</td>
+</tr>
+<tr>
+<td><strong>Pasta local</strong> (<code>local</code>)</td>
+<td>Pede a pasta onde as cópias serão guardadas, por exemplo em um HD externo.</td>
+</tr>
+<tr>
+<td><strong>Celular</strong></td>
+<td>Veja a seção 10.</td>
+</tr>
+</tbody>
+</table>
+<ol start="4">
+<li>Depois de adicionar, o serviço aparece com <strong>✅</strong> na lista e já pode ser usado na aba <strong>Sincronizar</strong>.</li>
+</ol>
+<p>Para <strong>remover</strong> uma conexão, escolha-a na lista (ela precisa estar com ✅) e clique em <strong>Remover</strong>. Os arquivos que já estão na nuvem <strong>não são apagados</strong>.</p>
+<blockquote>
+<p><strong>Dica:</strong> se você acabou de instalar e ainda não tem nenhuma conexão, o programa pode perguntar <strong>&quot;Onde guardar suas cópias?&quot;</strong> com as opções <strong>Google Drive</strong>, <strong>OneDrive</strong> ou <strong>Configurar depois</strong>.</p>
+</blockquote>
+<hr>
+<h2 id="4-sincronizar-uma-pasta">4. Sincronizar uma pasta</h2>
+<p>A aba <strong>Sincronizar</strong> é a tela do dia a dia.</p>
+<h3 id="41-passo-a-passo">4.1 Passo a passo</h3>
+<ol>
+<li>Abra a aba <strong>Sincronizar</strong>.</li>
+<li>Em <strong>Conexão ativa</strong>, escolha onde guardar a cópia (por exemplo, <code>gdriver</code>). O CopyTo lembra a última escolha.</li>
+<li>Clique em <strong>SINCRONIZAR</strong>.</li>
+<li>Escolha a <strong>pasta do seu computador</strong> que será copiada e confirme.</li>
+<li>Aguarde. Você acompanha tudo no painel da operação e no log.</li>
+</ol>
+<p>Enquanto trabalha, o programa <strong>bloqueia os botões</strong> para evitar duas operações ao mesmo tempo. Eles voltam ao normal quando terminar.</p>
+<h3 id="42-onde-as-cópias-ficam-na-nuvem">4.2 Onde as cópias ficam na nuvem</h3>
+<p>A nuvem repete o caminho completo da pasta no seu computador, dentro de uma pasta chamada <code>CopyTo</code>. Exemplo do print abaixo:</p>
+<ul>
+<li><strong>Origem:</strong> <code>/home/paulosspacheco/v/paulosspacheco/LazarusProjects/MarIcarai/Mi.Scripts/examples/CopyTo_GUI</code></li>
+<li><strong>Destino:</strong> <code>gdriver:CopyTo/home/paulosspacheco/v/paulosspacheco/LazarusProjects/MarIcarai/Mi.Scripts/examples/CopyTo_GUI</code></li>
+</ul>
+<p>Assim, pastas com o mesmo nome em lugares diferentes nunca se misturam.</p>
+<h3 id="43-lendo-a-tela">4.3 Lendo a tela</h3>
+<p><img src="./imagens/ManualUsuario_CopyToGUI.png" alt="Tela do CopyTo ao fim de uma sincronização"></p>
+<p><em>Exemplo: sincronização concluída com sucesso.</em></p>
+<table>
+<thead>
+<tr>
+<th>Parte da tela</th>
+<th>O que significa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Título da janela</strong> (<code>Finalizado - CopyTo_GUI ...</code>)</td>
+<td>Mostra o estado mesmo com a janela minimizada: <code>NN%</code>, <code>Processando</code>, <code>Finalizado</code>, <code>Finalizado com erro</code> ou <code>Interrompido</code>. Você acompanha pela barra de tarefas.</td>
+</tr>
+<tr>
+<td><strong>Conexão ativa</strong></td>
+<td>O serviço escolhido. Abaixo dele, um resumo: <code>gdriver: 5 syncs, 80,0% sucesso</code> — quantas sincronizações já foram feitas com ele e quantas deram certo.</td>
+</tr>
+<tr>
+<td><strong>Status</strong></td>
+<td>A fase atual (veja a tabela 4.4), seguida do nome da operação.</td>
+</tr>
+<tr>
+<td><strong>Origem / Destino</strong></td>
+<td>De onde sai e para onde vai a cópia. Caminhos longos são encurtados para caber na tela.</td>
+</tr>
+<tr>
+<td><strong>Tempo</strong></td>
+<td>Durante a cópia: hora de início e tempo decorrido. Depois: <code>Início</code>, <code>Fim</code> e <code>Duração</code>.</td>
+</tr>
+<tr>
+<td><strong>Último</strong></td>
+<td>O último arquivo tratado, com a ação: <strong>Copiado</strong>, <strong>Alterado</strong>, <strong>Movido</strong> ou <strong>Apagado</strong>. Mostra <code>—</code> quando nenhum arquivo foi tratado.</td>
+</tr>
+<tr>
+<td><strong>Ver todos (N)</strong></td>
+<td>Abre a lista de todos os arquivos da operação. Fica apagado enquanto não há arquivos.</td>
+</tr>
+<tr>
+<td><strong>Barra de progresso</strong></td>
+<td>Mostra o avanço. Quando o programa ainda não sabe o percentual, ela fica correndo de um lado a outro.</td>
+</tr>
+<tr>
+<td><strong>Linha abaixo da barra</strong></td>
+<td>Bytes enviados e total, velocidade e tempo restante (ETA). No exemplo: `0 B / 0 B</td>
+</tr>
+</tbody>
+</table>
+<p><strong>O que o exemplo mostra:</strong> a sincronização terminou (<strong>FINALIZADO</strong>), levou 2 minutos e 12 segundos e <strong>não enviou nenhum byte</strong>. Isso é normal quando a pasta já estava toda na nuvem, sem arquivos novos ou alterados. O programa gasta esse tempo conferindo se está tudo igual.</p>
+<h3 id="44-as-fases-de-uma-operação">4.4 As fases de uma operação</h3>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Pronto</strong></td>
+<td>Nada em andamento.</td>
+</tr>
+<tr>
+<td><strong>AGUARDANDO CONFIRMAÇÃO</strong></td>
+<td>O programa espera uma resposta sua antes de começar. Leia a pergunta e responda.</td>
+</tr>
+<tr>
+<td><strong>PROCESSANDO</strong></td>
+<td>Em andamento.</td>
+</tr>
+<tr>
+<td><strong>FINALIZADO</strong></td>
+<td>Terminou bem.</td>
+</tr>
+<tr>
+<td><strong>FINALIZADO COM ERRO</strong></td>
+<td>Terminou com problema. Leia o log (seção 8) e veja a seção 12.</td>
+</tr>
+<tr>
+<td><strong>INTERROMPIDO</strong></td>
+<td>Você mandou parar.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="5-simular-sem-alterar-nada">5. Simular (sem alterar nada)</h2>
+<p><strong>Simular (sem alterar)</strong> faz todo o trabalho de conferência, mas <strong>não envia, não move e não apaga nada</strong>. É a melhor forma de ver o que a sincronização faria.</p>
+<ol>
+<li>Escolha a conexão.</li>
+<li>Clique em <strong>Simular (sem alterar)</strong>.</li>
+<li>Escolha a pasta.</li>
+<li>Ao final, o painel resume o que aconteceria:
+<ul>
+<li><strong>seriam copiados</strong>: arquivos novos que subiriam;</li>
+<li><strong>seriam movidos p/ backup</strong>: arquivos alterados ou removidos no computador;</li>
+<li><strong>datas a alterar</strong>: só a data do arquivo mudaria.</li>
+</ul>
+</li>
+</ol>
+<p>Sem nada a fazer, aparece: <em>&quot;Nenhum arquivo seria copiado ou movido para o backup.&quot;</em> Use <strong>Ver todos</strong> para a lista completa.</p>
+<blockquote>
+<p>Recomendado na primeira vez que você sincroniza uma pasta, ou depois de apagar muita coisa no computador.</p>
+</blockquote>
+<hr>
+<h2 id="6-diagnosticar-a-conexão">6. Diagnosticar a conexão</h2>
+<p><strong>Diagnosticar conexão</strong> testa se tudo está funcionando: confere o rclone e a configuração do serviço, testa o login, as permissões e a pasta raiz, e mostra informações úteis em caso de problema.</p>
+<p>Não pede pasta e não altera nenhum arquivo. Use quando a sincronização falhar ou depois de ficar muito tempo sem usar.</p>
+<hr>
+<h2 id="7-restaurar-trazer-arquivos-de-volta">7. Restaurar (trazer arquivos de volta)</h2>
+<p><strong>Restaurar</strong> copia da nuvem de volta para o seu computador.</p>
+<ol>
+<li>Clique em <strong>Restaurar</strong>.</li>
+<li>Uma janela mostra as pastas guardadas na nuvem. <strong>Escolha a pasta</strong> que deseja recuperar.</li>
+<li>Escolha a <strong>pasta do computador</strong> onde os arquivos serão colocados. O programa cria dentro dela uma subpasta com o nome da pasta recuperada. Se o destino não existir, ele pergunta se deve criá-lo.</li>
+<li>Aguarde o fim. O andamento aparece como em qualquer sincronização.</li>
+</ol>
+<p><strong>A restauração é segura:</strong></p>
+<ul>
+<li>só traz arquivos que <strong>ainda não existem</strong> no computador;</li>
+<li><strong>nunca substitui</strong> um arquivo que você já tem;</li>
+<li><strong>nunca apaga</strong> nada no seu computador.</li>
+</ul>
+<hr>
+<h2 id="8-o-log-de-eventos">8. O Log de Eventos</h2>
+<p>A parte de baixo da janela registra tudo o que o programa faz, com a hora de cada linha. É o primeiro lugar para olhar quando algo não saiu como esperado.</p>
+<ul>
+<li>Ao começar uma nova operação, o log é <strong>limpo automaticamente</strong>.</li>
+<li><strong>Limpar</strong> apaga o log na hora.</li>
+<li><strong>Ocultar log detalhado</strong> esconde o log para deixar a tela mais limpa. O botão <strong>Mostrar</strong> o traz de volta.</li>
+<li>Você pode <strong>arrastar a divisória</strong> entre as abas e o log para dar mais espaço a um deles.</li>
+</ul>
+<p>Ao fim de cada operação, o log mostra um quadro: <strong>✅ SUCESSO</strong> ou <strong>❌ FALHOU</strong>.</p>
+<hr>
+<h2 id="9-parar-uma-operação">9. Parar uma operação</h2>
+<p>Clique em <strong>Parar</strong> para interromper o que está em andamento. O status muda para <strong>INTERROMPIDO</strong>.</p>
+<p>Se você tentar <strong>fechar a janela</strong> com uma operação rodando, o programa pergunta:</p>
+<ul>
+<li><strong>Sair mesmo assim</strong> — interrompe e fecha;</li>
+<li><strong>Continuar</strong> — volta ao programa (é a opção padrão).</li>
+</ul>
+<blockquote>
+<p><strong>Atenção:</strong> a <strong>instalação</strong> não pode ser interrompida com segurança. Sair no meio dela pode deixar o CopyTo incompleto. Aguarde terminar.</p>
+</blockquote>
+<hr>
+<h2 id="10-guardar-as-cópias-no-celular-android">10. Guardar as cópias no celular (Android)</h2>
+<p>O CopyTo pode copiar suas pastas para o armazenamento do celular, pela rede Wi-Fi da sua casa. O computador e o celular precisam estar no <strong>mesmo Wi-Fi</strong>.</p>
+<h3 id="101-no-celular-uma-única-vez">10.1 No celular (uma única vez)</h3>
+<ol>
+<li>Instale o <strong>Termux pela Google Play Store</strong> (Android 11 ou superior). Se já tiver o Termux instalado por outra origem, desinstale antes.</li>
+<li>Abra o Termux e execute o script de configuração indicado na documentação do provider <code>celular</code>. Ele explica cada passo e, no final, mostra um quadro com <strong>IP, porta, usuário e senha</strong>. Anote esses dados.</li>
+</ol>
+<h3 id="102-no-computador">10.2 No computador</h3>
+<ol>
+<li>Na aba <strong>Instalador</strong>, escolha <strong>celular</strong> e clique em <strong>Adicionar</strong>.</li>
+<li>Informe o <strong>IP</strong>, a <strong>porta</strong> (normalmente <code>8022</code>), o <strong>usuário</strong> e a <strong>senha</strong> do quadro.</li>
+<li>O programa testa a conexão. Se funcionar, o provider fica pronto.</li>
+</ol>
+<h3 id="103-antes-de-cada-sincronização">10.3 Antes de cada sincronização</h3>
+<ul>
+<li>o celular está ligado e no mesmo Wi-Fi;</li>
+<li>o <strong>Termux está aberto</strong> (não o feche deslizando-o na lista de apps);</li>
+<li>a tela fica ligada durante a cópia.</li>
+</ul>
+<p>As cópias ficam em uma pasta <code>CopyTo</code> no armazenamento interno do celular. Use o app <strong>Arquivos</strong> para encontrá-la.</p>
+<blockquote>
+<p>Se o roteador mudar o IP do celular, o CopyTo tenta achá-lo sozinho. O mais simples é reservar um IP fixo para o celular nas configurações do roteador.</p>
+</blockquote>
+<hr>
+<h2 id="11-outras-formas-de-usar">11. Outras formas de usar</h2>
+<h3 id="111-pela-linha-de-comando">11.1 Pela linha de comando</h3>
+<p>Quem prefere atalhos pode abrir a sincronização de uma pasta direto do terminal ou de um atalho:</p>
+<pre><code>copytogui --sync-folder &lt;conexão&gt; [pasta]
+</code></pre>
+<ul>
+<li>Sem a pasta, usa a pasta atual.</li>
+<li>Se o programa já estiver aberto, a janela existente recebe o pedido e começa a sincronizar.</li>
+<li>Se já houver uma operação em andamento, o programa avisa e pede que você espere.</li>
+</ul>
+<h3 id="112-atalhos">11.2 Atalhos</h3>
+<p>A instalação cria atalhos do CopyTo GUI no seu sistema. Eles são removidos na desinstalação.</p>
+<hr>
+<h2 id="12-problemas-comuns">12. Problemas comuns</h2>
+<table>
+<thead>
+<tr>
+<th>Sintoma</th>
+<th>O que fazer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Os botões <strong>SINCRONIZAR</strong>, <strong>Simular</strong>, <strong>Diagnosticar</strong> e <strong>Restaurar</strong> estão apagados</td>
+<td>Veja a mensagem em <strong>Estatísticas</strong>: <em>&quot;Instale o CopyTo primeiro&quot;</em> (use a aba <strong>Instalador</strong>) ou <em>&quot;Configure um provider primeiro&quot;</em> (adicione uma conexão). Se houver outra operação rodando, espere ela terminar.</td>
+</tr>
+<tr>
+<td>Aviso <strong>&quot;Limite temporário do Google Drive&quot;</strong></td>
+<td>O Google limitou os pedidos por um tempo. Espere alguns minutos e tente de novo. Os arquivos já copiados são mantidos.</td>
+</tr>
+<tr>
+<td><strong>FINALIZADO COM ERRO</strong></td>
+<td>Clique em <strong>Diagnosticar conexão</strong> e leia o log. Os erros mais comuns são internet fora do ar, autorização vencida (adicione a conexão de novo) e falta de espaço na nuvem.</td>
+</tr>
+<tr>
+<td>A tela mostra <strong>&quot;(aguardando resposta do script)&quot;</strong>, mas o log já diz <strong>&quot;Operação finalizada&quot;</strong></td>
+<td>A cópia terminou. Pode seguir usando o programa normalmente.</td>
+</tr>
+<tr>
+<td>Navegador não abriu ao adicionar o Google Drive</td>
+<td>Confirme que há um navegador padrão e tente adicionar de novo.</td>
+</tr>
+<tr>
+<td>Celular: <strong>Não foi possível conectar</strong></td>
+<td>Abra o Termux, confira o IP e confirme que os dois aparelhos estão no mesmo Wi-Fi.</td>
+</tr>
+<tr>
+<td>Celular: parou no meio da cópia</td>
+<td>O Android pode ter encerrado o Termux. Abra-o de novo, mantenha a tela ligada e sincronize outra vez.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="13-desinstalar">13. Desinstalar</h2>
+<ol>
+<li>Abra a aba <strong>Instalador</strong>.</li>
+<li>Clique em <strong>Desinstalar</strong>. O programa lista o que será removido (conexões, ferramentas de apoio e arquivos de configuração) e pede confirmação.</li>
+<li>Ao final, o CopyTo GUI <strong>fecha sozinho</strong>.</li>
+</ol>
+<p><strong>Seus arquivos na nuvem e no computador não são apagados.</strong> Só os programas e as configurações do CopyTo são removidos.</p>
+<hr>
+<h2 id="14-cuidados-e-segurança">14. Cuidados e segurança</h2>
+<ul>
+<li>Mantenha <strong>suas contas e senhas protegidas</strong>. As chaves de acesso de serviços como IDrive E2 e Backblaze B2 dão acesso total aos seus arquivos: não as compartilhe.</li>
+<li>Para o celular, use o servidor apenas em <strong>redes Wi-Fi de confiança</strong>, como a da sua casa. Fora dela, mantenha-o desligado.</li>
+<li>Para <strong>ver o que vai acontecer</strong> antes de sincronizar algo importante, use sempre <strong>Simular</strong>.</li>
+<li>Faça uma <strong>restauração de teste</strong> de vez em quando, para ter certeza de que suas cópias estão boas.</li>
+</ul>
+<hr>
+<h2 id="15-glossário">15. Glossário</h2>
+<table>
+<thead>
+<tr>
+<th>Termo</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Provider / Conexão</strong></td>
+<td>O serviço ou lugar onde as cópias são guardadas.</td>
+</tr>
+<tr>
+<td><strong>Sincronizar</strong></td>
+<td>Deixar a nuvem igual à sua pasta: envia o que é novo ou mudou.</td>
+</tr>
+<tr>
+<td><strong>Simular</strong></td>
+<td>Mostrar o que seria feito, sem fazer.</td>
+</tr>
+<tr>
+<td><strong>Restaurar</strong></td>
+<td>Trazer arquivos da nuvem de volta ao computador.</td>
+</tr>
+<tr>
+<td><strong>Backup</strong></td>
+<td>Pasta, no mesmo serviço, que guarda os arquivos alterados ou removidos.</td>
+</tr>
+<tr>
+<td><strong>Log</strong></td>
+<td>Registro, linha a linha, do que o programa fez.</td>
+</tr>
+<tr>
+<td><strong>ETA</strong></td>
+<td>Tempo estimado para terminar.</td>
+</tr>
+<tr>
+<td><strong>rclone</strong></td>
+<td>Programa de apoio que faz a transferência dos arquivos.</td>
+</tr>
+</tbody>
+</table>
+
+            
+            
+        </body>
+        </html>

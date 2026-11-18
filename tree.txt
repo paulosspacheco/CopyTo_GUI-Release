@@ -1,0 +1,28 @@
+.
+├── android
+│   ├── celular_servidor_sftp.html
+│   ├── celular_servidor_sftp.md
+│   ├── celular_servidor_sftp.sh
+│   ├── celular_servidor_sftp.sh.sha256
+│   └── manifest.txt
+├── docs
+│   ├── aba-instalador.html
+│   ├── aba-instalador.md
+│   ├── imagens
+│   │   ├── aba-instalador.png
+│   │   └── ManualUsuario_CopyToGUI.png
+│   ├── ManualUsuario_CopyToGUI.html
+│   └── ManualUsuario_CopyToGUI.md
+├── linux-x86_64
+│   ├── CopyToInstaller-1.7.0
+│   ├── CopyToInstaller-1.7.0.sha256
+│   └── manifest.txt
+├── tree.txt
+└── windows-x86_64
+    ├── CopyToInstaller-1.6.0.exe
+    ├── CopyToInstaller-1.6.0.exe.sha256
+    ├── CopyToInstaller-1.7.0.exe
+    ├── CopyToInstaller-1.7.0.exe.sha256
+    └── manifest.txt
+
+6 directories, 20 files

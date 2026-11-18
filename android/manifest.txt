@@ -1,0 +1,7 @@
+CopyTo Build Manifest
+=====================
+Versão:     1.6.0
+Data:       2026-11-17
+Plataforma: android
+
+Pacote:     celular_servidor_sftp.sh
