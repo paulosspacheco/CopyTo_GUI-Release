@@ -6,6 +6,19 @@
 
 ---
 
+## Download
+
+Versão atual: **1.7.0**
+
+| Sistema | Download | SHA-256 |
+|---|---|---|
+| **Windows** (64 bits) | [CopyToInstaller-1.7.0.exe](https://github.com/paulosspacheco/CopyTo_GUI-Release/raw/main/windows-x86_64/CopyToInstaller-1.7.0.exe) | `9fb9769d00554c8cb15d635aa2e3bd6fad9008f36c375b89d89b4be8930e591c` |
+| **Linux** (64 bits) | [CopyToInstaller-1.7.0](https://github.com/paulosspacheco/CopyTo_GUI-Release/raw/main/linux-x86_64/CopyToInstaller-1.7.0) | `0c52d5e759fe4a6273fe350d532c390f415712ae384f85975fe951d27f631743` |
+
+Depois de baixar, veja em [Conferindo o download](#conferindo-o-download) como confirmar que o arquivo está íntegro.
+
+---
+
 ## O que você pode fazer
 
 - Sincronizar pastas do computador com a nuvem e acompanhar o progresso e as estatísticas da cópia.
@@ -33,19 +46,19 @@ Cada instalador tem o nome `CopyToInstaller-<versão>` e acompanha um arquivo `.
 
 ### Windows
 
-1. Baixe o arquivo da pasta `windows-x86_64`.
-2. Dê dois cliques no `CopyToInstaller-<versão>.exe`.
+1. Baixe o [CopyToInstaller-1.7.0.exe](https://github.com/paulosspacheco/CopyTo_GUI-Release/raw/main/windows-x86_64/CopyToInstaller-1.7.0.exe).
+2. Dê dois cliques no `CopyToInstaller-1.7.0.exe`.
 3. Leia a licença, marque **Eu li e concordo com os termos** e clique em **Avançar**.
 4. Quando perguntado, escolha o destino que você usa — **Google Drive**, **OneDrive** — ou **Configurar depois**.
 
 ### Linux
 
-1. Baixe o arquivo da pasta `linux-x86_64`.
+1. Baixe o [CopyToInstaller-1.7.0](https://github.com/paulosspacheco/CopyTo_GUI-Release/raw/main/linux-x86_64/CopyToInstaller-1.7.0).
 2. Dê permissão de execução e rode:
 
 ```bash
-chmod +x CopyToInstaller-<versão>
-./CopyToInstaller-<versão>
+chmod +x CopyToInstaller-1.7.0
+./CopyToInstaller-1.7.0
 ```
 
 3. Siga as telas do instalador (licença e escolha do destino).
@@ -87,16 +100,16 @@ curl -fsSL https://raw.githubusercontent.com/paulosspacheco/CopyTo_GUI-Release/m
 
 ## Conferindo o download
 
-Compare o resultado com o conteúdo do arquivo `.sha256` que acompanha o instalador.
+Compare o resultado com o SHA-256 da tabela de [Download](#download) (ou com o arquivo `.sha256` que acompanha o instalador). Os valores devem ser idênticos.
 
 ```bash
 # Linux
-sha256sum CopyToInstaller-<versão>
+sha256sum CopyToInstaller-1.7.0
 ```
 
 ```powershell
 # Windows (PowerShell)
-Get-FileHash .\CopyToInstaller-<versão>.exe -Algorithm SHA256
+Get-FileHash .\CopyToInstaller-1.7.0.exe -Algorithm SHA256
 ```
 
 ---
