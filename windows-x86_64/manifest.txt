@@ -1,8 +1,8 @@
 CopyTo Build Manifest
 =====================
-Versão:     1.7.0
-Data:       20261118
+Versão:     1.8.0
+Data:       20261121
 Plataforma: windows-x86_64
 
-Pacote:     CopyTo-1.7.0-windows-x86_64-20261118.zip
-Instalador: CopyToInstaller-1.7.0.exe
+Pacote:     CopyTo-1.8.0-windows-x86_64-20261121.zip
+Instalador: CopyToInstaller-1.8.0.exe
