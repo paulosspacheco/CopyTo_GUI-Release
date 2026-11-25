@@ -13,16 +13,16 @@
 │   │   └── ManualUsuario_CopyToGUI.png
 │   ├── ManualUsuario_CopyToGUI.html
 │   └── ManualUsuario_CopyToGUI.md
+├── DOWNLOADS.md
 ├── linux-x86_64
-│   ├── CopyToInstaller-1.7.0
-│   ├── CopyToInstaller-1.7.0.sha256
+│   ├── CopyToInstaller-1.8.0
+│   ├── CopyToInstaller-1.8.0.sha256
 │   └── manifest.txt
+├── README.md
 ├── tree.txt
 └── windows-x86_64
-    ├── CopyToInstaller-1.6.0.exe
-    ├── CopyToInstaller-1.6.0.exe.sha256
-    ├── CopyToInstaller-1.7.0.exe
-    ├── CopyToInstaller-1.7.0.exe.sha256
+    ├── CopyToInstaller-1.8.0.exe
+    ├── CopyToInstaller-1.8.0.exe.sha256
     └── manifest.txt
 
 6 directories, 20 files
