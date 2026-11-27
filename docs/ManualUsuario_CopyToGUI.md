@@ -1,6 +1,6 @@
 # CopyTo — Manual do Usuário
 
-**Versão do programa descrita aqui:** 1.6.0.137 (17/11/2026)
+**Versão do programa descrita aqui:** 1.8.0 (21/11/2026)
 
 ---
 
@@ -8,7 +8,7 @@
 
 O CopyTo guarda uma **cópia de segurança das suas pastas na nuvem** (Google Drive, OneDrive, Dropbox e outros) ou em outro lugar de sua escolha, como um disco do computador ou o celular.
 
-Você escolhe uma pasta, clica em **SINCRONIZAR**, e o CopyTo envia para a nuvem o que é novo ou mudou.p
+Você escolhe uma pasta, clica em **SINCRONIZAR**, e o CopyTo envia para a nuvem o que é novo ou mudou.
 
 Três ideias para guardar:
 
@@ -42,7 +42,7 @@ Ao lado, o programa mostra se as ferramentas necessárias estão presentes: **�
 
 No Windows, o Git Bash é instalado automaticamente, se necessário.
 
-Se você clicar em **Atualizar** a qualquer momento, o programa confere de novo o estado da instalação.
+Se você clicar em **status da instalação** a qualquer momento, o programa confere de novo o estado da instalação.
 
 ### 3.2 Conectar um serviço (provider)
 
@@ -201,7 +201,13 @@ O CopyTo pode copiar suas pastas para o armazenamento do celular, pela rede Wi-F
 ### 10.1 No celular (uma única vez)
 
 1. Instale o **Termux pela Google Play Store** (Android 11 ou superior). Se já tiver o Termux instalado por outra origem, desinstale antes.
-2. Abra o Termux e execute o script de configuração indicado na documentação do provider `celular`. Ele explica cada passo e, no final, mostra um quadro com **IP, porta, usuário e senha**. Anote esses dados.
+2. Com o celular no Wi-Fi, abra o Termux, cole o comando abaixo e toque em Enter:
+
+   ```bash
+   curl -fsSL https://raw.githubusercontent.com/paulosspacheco/CopyTo_GUI-Release/main/android/celular_servidor_sftp.sh | bash
+   ```
+
+   O script explica cada passo e, no final, mostra um quadro com **IP, porta, usuário e senha**. Anote esses dados.
 
 ### 10.2 No computador
 

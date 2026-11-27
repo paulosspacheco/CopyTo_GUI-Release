@@ -1,6 +1,6 @@
 # CopyTo GUI — Aba Instalador
 
-**Versão do programa descrita aqui:** 1.6.0.137 (17/11/2026)
+**Versão do programa descrita aqui:** 1.8.0 (21/11/2026)
 
 A aba **Instalador** é onde você **prepara o CopyTo** para funcionar: instala o programa, confere as ferramentas de apoio e escolhe **onde guardar suas cópias** (as conexões, também chamadas de *providers*). Ela fica ao lado da aba **Sincronizar**, que é a tela do dia a dia.
 
