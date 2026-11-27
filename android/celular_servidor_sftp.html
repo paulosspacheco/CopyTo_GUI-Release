@@ -142,16 +142,20 @@
             <span id="markdown-mermaid" aria-hidden="true" data-config="{&quot;darkModeTheme&quot;:&quot;vscode&quot;,&quot;lightModeTheme&quot;:&quot;vscode&quot;,&quot;maxTextSize&quot;:50000,&quot;clickDrag&quot;:&quot;alt&quot;,&quot;showControls&quot;:&quot;onHoverOrFocus&quot;,&quot;resizable&quot;:true,&quot;maxHeight&quot;:&quot;&quot;}"></span>
 				<h1 id="apoiocelular_servidor_sftpsh--transformar-o-celular-em-servidor-sftp-para-o-copyto"><code>apoio/celular_servidor_sftp.sh</code> — transformar o celular em servidor SFTP para o CopyTo</h1>
 <p>Script que roda <strong>no Termux, dentro do celular Android</strong>, e transforma o aparelho em um servidor SFTP, deixando-o pronto para o provider <code>celular</code>. Substitui os passos 1.2 a 1.7 de <code>celular.md</code> por um único comando e <strong>conduz o usuário leigo passo a passo</strong>, explicando o que vai acontecer e o que ele deve fazer em cada etapa.</p>
-<p>Nos fontes fica em <code>providers/apoio/</code> (subpasta) para não ser listado como provider pelo instalador, que lê apenas <code>providers/*.sh</code>. Na publicação vai na pasta <code>android/</code> da <code>release</code>, que é o conteúdo do repositório <code>copyto-release</code>:</p>
-<pre><code>    release
+<p>Nos fontes fica em <code>providers/apoio/</code> (subpasta) para não ser listado como provider pelo instalador, que lê apenas <code>providers/*.sh</code>. Na publicação vai na pasta <code>android/</code> da <code>release</code>, que é o conteúdo do repositório público <a href="https://github.com/paulosspacheco/CopyTo_GUI-Release"><code>paulosspacheco/CopyTo_GUI-Release</code></a>:</p>
+<pre><code>    release                          (raiz do CopyTo_GUI-Release)
+    ├── README.md                    orientação ao usuário, aponta para docs/
+    ├── DOWNLOADS.md                 único lugar com os links de download
     ├── linux-x86_64/
     ├── windows-x86_64/
-    └── android/
-        ├── celular_servidor_sftp.sh
-        ├── celular_servidor_sftp.sh.sha256
-        └── manifest.txt
+    ├── android/
+    │   ├── celular_servidor_sftp.sh
+    │   ├── celular_servidor_sftp.sh.sha256
+    │   └── manifest.txt
+    └── docs/
+        └── (Manual do Usuário, Aba Instalador, guia do celular)
 </code></pre>
-<p>O nome do arquivo não leva versão, para o comando do usuário nunca mudar; a versão fica no <code>manifest.txt</code>.</p>
+<p>O nome do arquivo não leva versão, para o comando do usuário nunca mudar; a versão fica no <code>manifest.txt</code>. O link do script para o usuário fica no <code>DOWNLOADS.md</code>, como os dos instaladores.</p>
 <hr>
 <h2 id="1-o-que-o-script-faz">1. O que o script faz</h2>
 <p>Abre com uma tela de apresentação (5 passos, cerca de 3 minutos, 2 permissões do Android) e segue:</p>
@@ -200,14 +204,30 @@
 <hr>
 <h2 id="3-como-executar">3. Como executar</h2>
 <p>Dentro do Termux, com o celular no Wi-Fi. O prefixo <code>bash</code> é obrigatório (o armazenamento compartilhado não permite executar arquivos).</p>
-<p>O script é publicado na pasta <code>android/</code> da <code>release</code>, junto dos instaladores, no repositório <code>copyto-release</code>. O comando que o usuário cola no Termux:</p>
-<pre><code class="language-bash">curl -fsSL https://raw.githubusercontent.com/paulosspacheco/copyto-release/main/android/celular_servidor_sftp.sh | bash
+<p>O script é publicado na pasta <code>android/</code> do repositório <code>CopyTo_GUI-Release</code>, junto dos instaladores. O comando que o usuário cola no Termux:</p>
+<pre><code class="language-bash">curl -fsSL https://raw.githubusercontent.com/paulosspacheco/CopyTo_GUI-Release/main/android/celular_servidor_sftp.sh | bash
 </code></pre>
-<p>O repositório precisa ser público, e a versão nova pode levar alguns minutos para aparecer depois do <code>git push</code>.</p>
+<p>O repositório precisa ser público, e a versão nova pode levar alguns minutos para aparecer depois do <code>git push</code> (cache do <code>raw.githubusercontent.com</code>).</p>
 <p>Se o arquivo veio por WhatsApp (liberar o acesso aos arquivos antes com <code>termux-setup-storage</code>):</p>
 <pre><code class="language-bash">bash ~/storage/downloads/celular_servidor_sftp.sh
 </code></pre>
 <p>O script lê as respostas por <code>/dev/tty</code>, então funciona também pelo pipe do <code>curl</code>.</p>
+<h3 id="conferir-o-arquivo-opcional">Conferir o arquivo (opcional)</h3>
+<p>Quem baixou o arquivo pode conferir a integridade com o <code>.sha256</code> publicado ao lado:</p>
+<pre><code class="language-bash"><span class="hljs-built_in">cd</span> ~/storage/downloads
+curl -fsSLO https://raw.githubusercontent.com/paulosspacheco/CopyTo_GUI-Release/main/android/celular_servidor_sftp.sh.sha256
+<span class="hljs-built_in">sha256sum</span> -c celular_servidor_sftp.sh.sha256
+</code></pre>
+<h3 id="publicar-uma-versão-nova">Publicar uma versão nova</h3>
+<p>No computador, dentro da pasta <code>release</code> (clone do <code>CopyTo_GUI-Release</code>):</p>
+<pre><code class="language-bash"><span class="hljs-built_in">cp</span> ../fontes/providers/apoio/celular_servidor_sftp.sh android/
+<span class="hljs-built_in">cd</span> android
+<span class="hljs-built_in">sha256sum</span> celular_servidor_sftp.sh &gt; celular_servidor_sftp.sh.sha256
+<span class="hljs-comment"># atualizar a versão e a data em manifest.txt</span>
+<span class="hljs-built_in">cd</span> ..
+git add android &amp;&amp; git commit -m <span class="hljs-string">&quot;android: celular_servidor_sftp.sh vX.Y&quot;</span> &amp;&amp; git push
+</code></pre>
+<p>O caminho <code>../fontes/</code> é ilustrativo: usar a pasta real dos fontes.</p>
 <hr>
 <h2 id="4-os-dados-mostrados-no-final">4. Os dados mostrados no final</h2>
 <table>
@@ -334,6 +354,11 @@
 <td><code>find ~/storage/shared -maxdepth 8 -name &quot;celular_servidor*&quot;</code></td>
 </tr>
 <tr>
+<td><code>curl: (22) ... 404</code></td>
+<td>Endereço digitado errado ou repositório ainda não publicado</td>
+<td>Copiar o comando do <code>DOWNLOADS.md</code>; conferir se o repositório é público</td>
+</tr>
+<tr>
 <td><code>Execute este script dentro do aplicativo Termux</code></td>
 <td>Fora do Termux</td>
 <td>Abrir o Termux e executar de lá</td>
@@ -381,6 +406,7 @@
 <li>Acesso por <strong>usuário e senha</strong> na rede local. Use senha forte (mínimo de 8 caracteres).</li>
 <li>O servidor liga sempre que o Termux é aberto; em Wi-Fi público execute <code>copyto-phone stop</code>.</li>
 <li>A senha é guardada pelo Termux (<code>passwd</code>) e nunca é gravada pelo script.</li>
+<li>O comando <code>curl ... | bash</code> executa o que estiver publicado no <code>CopyTo_GUI-Release</code>; por isso só o dono do repositório pode publicar nele, e o <code>.sha256</code> permite conferir o arquivo.</li>
 </ul>
 <hr>
 <h2 id="9-desinstalar">9. Desinstalar</h2>
@@ -399,6 +425,7 @@ sed -i <span class="hljs-string">&#x27;/# &gt;&gt;&gt; copyto-phone &gt;&gt;&gt;
 </ul>
 <h3 id="a-validar">A validar</h3>
 <ul>
+<li>comando <code>curl ... | bash</code> a partir do <code>CopyTo_GUI-Release</code> publicado;</li>
 <li><code>termux-wake-lock</code> sem o Termux:API;</li>
 <li>detecção automática do IP em outros aparelhos (no testado, o IP é digitado);</li>
 <li>início automático pelo <code>.bashrc</code> ao reabrir o Termux;</li>
